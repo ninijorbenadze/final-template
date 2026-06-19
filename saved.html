@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>შენახული — პროექტის სახელი</title>
+  <title>NBA Grid</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header>
     <nav>
-      <span class="nav__logo">პროექტის სახელი</span>
+      <span class="nav__logo">NBA Grid</span>
       <div class="nav__links">
         <a href="index.html">ძიება</a>
         <a href="saved.html">შენახული</a>
+        <a href="login.html">შესვლა</a>
       </div>
       <div class="nav__actions">
+        
+        
         <span id="nav-user"></span>
         <button id="logout-btn" type="button">გასვლა</button>
       </div>
@@ -25,15 +28,16 @@
   <main>
 
     <section>
-      <h2>შენახული ელემენტები</h2>
-      <p id="saved-empty" hidden>ჯერ არაფერია შენახული.</p>
+      <h2>შენახული გუნდები</h2>
+      <p id="saved-empty" hidden>არცერთი გუნდი არ არის შენახული.</p>
+      
       <div id="saved-grid"></div>
     </section>
 
   </main>
 
   <footer>
-    <!-- footer-ის შიგთავსი -->
+    <p>&copy; 2026 NBA Grid</p>
   </footer>
 
   <script type="module" src="js/saved.js"></script>

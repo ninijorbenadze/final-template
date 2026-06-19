@@ -3,24 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>შესვლა — პროექტის სახელი</title>
+  <title>NBA Grid</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <header>
+    <nav>
+      <span class="nav__logo">NBA Grid</span>
+      <div class="nav__links">
+        <a href="index.html">ძიება</a>
+        <a href="saved.html">შენახული</a>
+        <a href="login.html">შესვლა</a>
+      </div>
+      <div class="nav__actions">
+        <span id="nav-user"></span>
+        <button id="logout-btn" type="button" hidden>გასვლა</button>
+      </div>
+    </nav>
+  </header>
+
   <main>
 
-    <form id="login-form">
-      <!-- input type="text" ვალიდაციის ატრიბუტებით -->
-      <label for="name-input">შენი სახელი</label>
-      <input id="name-input" type="text" name="name" required minlength="2" autocomplete="name">
+    <section class="authorization-container">
+      <div class="authorization-tabs">
+        <button id="login-tab" class="auth-tab active" type="button">ავტორიზაცია</button>
+        <button id="registration-tab" class="auth-tab" type="button">რეგისტრაცია</button>
+      </div>
 
-      <p id="login-error" hidden></p>
+      <form id="login-form">
+        <h2>ავტორიზაცია</h2>
+        
+        <label for="login-name">სახელი</label>
+        <input id="login-name" type="text" name="name" required minlength="2" autocomplete="name" placeholder="სახელი">
 
-      <button type="submit">დაწყება →</button>
-    </form>
+        <label for="login-email">მეილი</label>
+        <input id="login-email" type="email" name="email" required minlength="6" placeholder="მაგ: name@mail.com">
+
+        <label for="login-password">პაროლი</label>
+        <input id="login-password" type="password" name="password" required minlength="7" placeholder="..........">
+
+        <p id="login-error" hidden></p>
+        <button type="submit">შესვლა →</button>
+      </form>
+
+      <form id="registration-form" hidden>
+        <h2>ახალი ანგარიშის შექმნა</h2>
+
+        <label for="name-reg">სახელი</label>
+        <input type="text" id="name-reg" name="name" required minlength="2" placeholder="სახელი">
+
+        <label for="email-reg">მეილი</label>
+        <input type="email" id="email-reg" name="email" required minlength="6" placeholder="მაგ: name@mail.com">
+
+        <label for="numb-reg">მობილურის ნომერი</label>
+        <input type="tel" id="numb-reg" name="number" required minlength="9" placeholder="5XXXXXXXX">
+
+        <label for="pass-reg">პაროლი</label>
+        <input type="password" id="pass-reg" name="password" required minlength="7" placeholder="პაროლი">
+
+        <label for="pass-reg-conf">გაიმეორე პაროლი</label>
+        <input type="password" id="pass-reg-conf" name="pass" required minlength="7" placeholder="გაიმეორე პაროლი">
+
+        <p id="register-error" hidden></p>
+        <p id="register-success" hidden></p>
+
+        <button type="submit">რეგისტრაცია</button>
+      </form>
+    </section>
 
   </main>
+
+  <footer>
+    <p>&copy; 2026 NBA Grid</p>
+  </footer>
 
   <script type="module" src="js/login.js"></script>
 </body>

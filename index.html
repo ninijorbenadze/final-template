@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>პროექტის სახელი</title>
+  <title>NBA Grid</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header>
     <nav>
-      <span class="nav__logo">პროექტის სახელი</span>
+      <span class="nav__logo">NBA Grid</span>
       <div class="nav__links">
         <a href="index.html">ძიება</a>
         <a href="saved.html">შენახული</a>
+        <a href="login.html">შესვლა</a>
       </div>
       <div class="nav__actions">
+        
         <span id="nav-user"></span>
         <button id="logout-btn" type="button">გასვლა</button>
       </div>
@@ -28,6 +30,19 @@
     <section>
       <form id="search-form">
         <!-- დაამატე input ველები აქ (სულ მცირე 3 განსხვავებული ტიპი) -->
+          <input type="text" id="search-input" placeholder="მოძებნე გუნდი">
+
+      <select id="conference-filter">
+        <option value="all">ყველა კონფერენცია</option>
+        <option value="East">აღმოსავლეთი (East)</option>
+        <option value="West">დასავლეთი (West)</option>
+      </select>
+
+      <label class="checkbox-container">
+        <input type="checkbox" id="champs-filter">
+        <span id="checkbox-text">მხოლოდ ჩემპიონი გუნდები</span>
+      </label>
+
         <button type="submit">ძიება</button>
       </form>
     </section>
@@ -41,10 +56,22 @@
       <div id="results-grid"></div>
     </section>
 
+      <div class="cards-details" id="team-details" style="display: none;">
+  <div class="card-body">
+    <h2 id="details-name">გუნდის სახელი</h2>
+    
+    <p><strong>ქალაქი:</strong> <span id="details-city"></span></p>
+    <p><strong>კონფერენცია:</strong> <span id="details-conference"></span></p>
+    <p><strong>დივიზიონი:</strong> <span id="details-division"></span></p>
+    
+    <button id="close-card-btn" type="button">X</button>
+  </div>
+</div>
+
   </main>
 
   <footer>
-    <!-- footer-ის შიგთავსი -->
+    <p>&copy; 2026 NBA Grid</p>
   </footer>
 
   <script type="module" src="js/main.js"></script>

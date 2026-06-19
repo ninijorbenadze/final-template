@@ -29,11 +29,25 @@ function renderSaved() {
 
   items.forEach(item => {
     const card = document.createElement('article');
+    card.className = 'team-card';
+
     // ბარათის შიგთავსი აქ
+    card.innerHTML = `
+  <img
+    src="${item.logo}"
+    alt="${item.name}"
+    class="team-logo">
+
+  <h3>${item.name}</h3>
+  <p><strong>City:</strong> ${item.city}</p>
+  <p><strong>Conference:</strong> ${item.conference}</p>
+  <p><strong>Division:</strong> ${item.division}</p>
+`;
 
     const removeBtn = document.createElement('button');
     removeBtn.type = 'button';
     removeBtn.textContent = 'წაშლა';
+    removeBtn.classList.add('remove-btn');
     removeBtn.addEventListener('click', () => {
       const updated = getSaved().filter(saved => saved.id !== item.id);
       setSaved(updated);
